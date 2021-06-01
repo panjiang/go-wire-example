@@ -1,0 +1,8 @@
+{
+    "database": {
+        "dsn": "root:root@tcp(localhost:33306)/xaniland-server"
+    },
+    "redis": {
+        "addrs": ["localhost:36379"]
+    }
+}

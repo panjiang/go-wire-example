@@ -11,14 +11,19 @@ var Provider = wire.NewSet(New) // 将New方法声明为Provider，表示New方�
 
 type Config struct {
 	Database database `json:"database"`
+	Redis    redis    `json:"redis"`
 }
 
 type database struct {
 	Dsn string `json:"dsn"`
 }
 
+type redis struct {
+	Addrs []string `json:"addrs"`
+}
+
 func New() (*Config, error) {
-	fp, err := os.Open("config/app.json")
+	fp, err := os.Open("config/config.json")
 	if err != nil {
 		return nil, err
 	}
